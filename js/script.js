@@ -30,16 +30,18 @@ const placeholder = function (word) {
   wordInProgress.innerText = placeholderLetters.join("");
 };
 
-guessLetterButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  message.innerText = "";
-  const guess = letterInput.value;
-  const goodGuess = validateInput(guess);
+letterInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    message.innerText = "";
+    const guess = letterInput.value;
+    const goodGuess = validateInput(guess);
 
-  if (goodGuess) {
-    makeGuess(guess);
+    if (goodGuess) {
+      makeGuess(guess);
+    }
+    letterInput.value = "";
   }
-  letterInput.value = "";
 });
 
 const validateInput = function (input) {
