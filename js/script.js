@@ -131,17 +131,17 @@ const startOver = function () {
 };
 
 playAgainButton.addEventListener("click", function () {
-    message.classList.remove("win");
-    guessedLetters = [];
-    remainingGuesses = 8;
-    remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;
-    guessedLettersElement.innerHTML = "";
-    message.innerText = "";
+  message.classList.remove("win");
+  guessedLetters = [];
+  remainingGuesses = 8;
+  remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;
+  guessedLettersElement.innerHTML = "";
+  message.innerText = "";
 
-    getWord();
+  getWord();
 
-    guessLetterButton.classList.remove("hide");
-    playAgainButton.classList.add("hide");
-    remainingGuessesElement.classList.remove("hide");
-    guessedLettersElement.classList.remove("hide");
+  guessLetterButton.classList.remove("hide");
+  playAgainButton.classList.add("hide");
+  remainingGuessesElement.classList.remove("hide");
+  guessedLettersElement.classList.remove("hide");
 });
