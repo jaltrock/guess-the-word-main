@@ -8,7 +8,7 @@ const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
 
 let word = "magnolia";
-let guessedLetters = [];
+const guessedLetters = [];
 let remainingGuesses = 8;
 
 const getWord = async function () {
@@ -29,6 +29,8 @@ const placeholder = function (word) {
   }
   wordInProgress.innerText = placeholderLetters.join("");
 };
+
+/*Changing functionality to respond to pressing "Enter" rather than clicking the button */
 
 letterInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
@@ -117,7 +119,6 @@ const checkIfWin = function () {
   if (word.toUpperCase() === wordInProgress.innerText) {
     message.classList.add("win");
     message.innerHTML = `<p class="highlight">You guessed the correct word! Congrats!</p>`;
-
     startOver();
   }
 };
